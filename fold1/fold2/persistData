@@ -1,0 +1,30 @@
+var humidityLevel = request.parameters.hlevel;
+
+if (humidityLevel <30){
+    
+    var time = new Date();
+var mailBody = "Hello,<br>Your plant was thirsty at " + time + "<br>";
+
+var emailConfig = {
+  "to": "jean.tchilingirian@elementn.com",
+  "fromName": "Cactus",
+  "subject": "Need water",
+  "body": mailBody
+};
+sendMail(emailConfig.to, emailConfig.fromName, emailConfig.subject, emailConfig.body);
+}
+
+//persist data
+var documents = require("document");
+
+// Define the document content to be updated
+var fields = {
+    // Update the states field by appending and deleting some values
+    "humidityLevel": humidityLevel,
+    "meta.types": {
+        "humidityLevel": "numeric"
+    }
+};
+
+return documents.save(fields);
+    
