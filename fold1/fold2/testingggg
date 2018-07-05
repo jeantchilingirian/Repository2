@@ -1,0 +1,5 @@
+var user = require("user");
+var device = require("device");
+
+
+return device.get("dev");
