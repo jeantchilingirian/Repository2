@@ -3,5 +3,3 @@ var dev = require("device");
 
 //return user.get("user1");
 var x = dev.generateToken("dev1");
-return dev.revokeToken("id");
-return dev.get("dev1");
