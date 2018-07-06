@@ -1,0 +1,6 @@
+var user = require("user");
+var dev = require("device");
+
+//return user.get("user1");
+return dev.generateToken("dev1");
+return dev.get("dev1");
