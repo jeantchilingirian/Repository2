@@ -1,0 +1,3 @@
+var user = require("user");
+
+return user.get("user1");
